@@ -125,9 +125,3 @@ python -c "import sys; sys.path.insert(0,'.'); from threat_intel_agent.src.graph
 - `evil.com`
 - `https://malware.test/payload`
 - `d41d8cd98f00b204e9800998ecf8427e`
-
-## Notes
-
-- This project is designed for security analysis/demo workflows.
-- Executor actions are simulated by default.
-- Do not run automated blocking in production without review controls.
