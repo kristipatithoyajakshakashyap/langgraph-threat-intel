@@ -40,4 +40,6 @@ Thumbs.db
 
 # Runtime artifacts
 memory_store/*.json
+**/memory_store/*.json
+docs/document.pdf
 *.log
