@@ -29,9 +29,16 @@ The workflow graph below is generated from the LangGraph Mermaid diagram.
 
 ![LangGraph Workflow](docs/langgraph_flow.png)
 
-Main flow:
+Main flow (node-by-node):
 
-`router -> enricher -> correlator -> reasoning -> threat_explainer -> resolution -> reviewer/executor -> reporter`
+- `router`: Extracts and classifies indicators (IP, domain, URL, hash) from the user query.
+- `enricher`: Calls VirusTotal, AbuseIPDB, and Shodan to gather threat intelligence for each indicator.
+- `correlator`: Combines multi-source signals into a normalized risk score and summary findings.
+- `reasoning`: Uses the local Ollama model to generate analyst-style interpretation and recommendations.
+- `threat_explainer`: Produces a clear, human-readable explanation of why each indicator is risky or benign.
+- `resolution`: Generates practical remediation steps based on severity and indicator type.
+- `reviewer/executor`: Applies review logic for higher-risk cases and runs simulated response actions.
+- `reporter`: Builds the final investigation report used by the UI and export features.
 
 ## Prerequisites
 
